@@ -28,6 +28,12 @@ class Preprocessing(object):
         raw_matrix = np.array(list(raw_image.getdata())).reshape(1024, 1024)
         return raw_matrix
 
+    @staticmethod
+    def image_to_coarse(image, sample_rate=4):
+        coarse_im = image.resize((image.size[0] / sample_rate, image.size[1] / sample_rate))
+        coarse_im = coarse_im.resize((image.size[0], image.size[1]))
+        return coarse_im
+
     def patch_extract(self, data_dir, label_data_dir, prefix='', image_size=512, crop_size=256, stride=16):
         files = self.load_tif_images(data_dir)
         labels = self.load_tif_images(label_data_dir)
