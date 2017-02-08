@@ -10,7 +10,7 @@ import numpy as np
 from six.moves import xrange
 from PIL import Image
 
-sys.path.append('/home/uchihashi/EM_segment/src')
+sys.path.append('/home/uchihashi/SR_cGAN/src/pix2pix')
 from ops import *
 from utils import *
 
